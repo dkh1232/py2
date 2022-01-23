@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生添加页面</title>
+</head>
+<body>
+<h1>添加学生</h1>
+<form action="/addstudenttodatabase/" method="post" name="addstudent">
+    {% csrf_token %}
+    <p><span>姓名</span><input type="text" name="sname1"></p>
+    <p><span>性别 0为女，1为男</span><input type="number" name="sgender1"></p>
+    <p><span>年龄</span><input type="number" name="sage1"></p>
+    <p><span>描述</span><input type="text" name="scontend1"></p>
+    <select id = ''>
+    {% for grade in grades %}
+    <option value="{{ grade.gname }}" name="sgrade1"></option>
+    {% endfor %}
+    </select>
+</form>
+</body>
+</html>
